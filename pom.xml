@@ -18,7 +18,7 @@
 
     <groupId>com.metaring</groupId>
     <artifactId>platform-plugin-eclipse</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <name>MetaRing Eclipse Plugin</name>
     <description>Eclipse Plugin for the MetaRing Platform</description>
@@ -40,9 +40,9 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/metaring/framework-java-localization.git</url>
-        <developerConnection>scm:git:git@github.com:metaring/framework-java-localization.git</developerConnection>
-        <tag>v1.0.0</tag>
+        <url>https://github.com/metaring/platform-plugin-eclipse.git</url>
+        <developerConnection>scm:git:git@github.com:metaring/platform-plugin-eclipse.git</developerConnection>
+        <tag>HEAD</tag>
     </scm>
 
     <dependencies>
