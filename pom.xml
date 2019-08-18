@@ -18,7 +18,7 @@
 
     <groupId>com.metaring</groupId>
     <artifactId>platform-plugin-eclipse</artifactId>
-    <version>1.2.2-SNAPSHOT</version>
+    <version>1.2.2</version>
 
     <name>MetaRing Eclipse Plugin</name>
     <description>Eclipse Plugin for the MetaRing Platform</description>
@@ -42,7 +42,7 @@
     <scm>
         <url>https://github.com/metaring/platform-plugin-eclipse.git</url>
         <developerConnection>scm:git:git@github.com:metaring/platform-plugin-eclipse.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>v1.2.2</tag>
     </scm>
 
     <dependencies>
