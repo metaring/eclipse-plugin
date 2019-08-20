@@ -124,6 +124,45 @@
                 </executions>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <id>clean-lib</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <delete dir="${project.basedir}/lib" includeemptydirs="true"/>
+                            </target>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>dist</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target xmlns:if="ant:if">
+                                <condition property="release">
+                                    <not>
+                                        <matches string="${project.version}" pattern="SNAPSHOT"/>
+                                    </not>
+                                </condition>
+                                <ant antfile="${project.basedir}/build.xml" if:set="release">
+                                    <property name="version" value="${project.version}"/>
+                                    <target name="plugin_export"/>
+                                </ant>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <artifactId>maven-deploy-plugin</artifactId>
                 <version>2.8.2</version>
                 <executions>
@@ -219,7 +258,7 @@
                     <execution>
                         <phase>compile</phase>
                         <goals>
-							<goal>use-releases</goal>
+                            <goal>use-releases</goal>
                             <goal>use-latest-releases</goal>
                         </goals>
                     </execution>
