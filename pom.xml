@@ -18,7 +18,7 @@
 
     <groupId>com.metaring</groupId>
     <artifactId>platform-plugin-eclipse</artifactId>
-    <version>1.2.5-SNAPSHOT</version>
+    <version>1.2.5</version>
 
     <name>MetaRing Eclipse Plugin</name>
     <description>Eclipse Plugin for the MetaRing Platform</description>
@@ -42,7 +42,7 @@
     <scm>
         <url>https://github.com/metaring/platform-plugin-eclipse.git</url>
         <developerConnection>scm:git:git@github.com:metaring/platform-plugin-eclipse.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>v1.2.5</tag>
     </scm>
 
     <dependencies>
@@ -136,7 +136,7 @@
                         </goals>
                         <configuration>
                             <target>
-                                <delete dir="${project.basedir}/lib" includeemptydirs="true"/>
+                                <delete dir="${project.basedir}/lib" includeemptydirs="true" />
                             </target>
                         </configuration>
                     </execution>
@@ -150,12 +150,12 @@
                             <target xmlns:if="ant:if">
                                 <condition property="release">
                                     <not>
-                                        <matches string="${project.version}" pattern="SNAPSHOT"/>
+                                        <matches string="${project.version}" pattern="SNAPSHOT" />
                                     </not>
                                 </condition>
                                 <ant antfile="${project.basedir}/build.xml" if:set="release">
-                                    <property name="version" value="${project.version}"/>
-                                    <target name="plugin_export"/>
+                                    <property name="version" value="${project.version}" />
+                                    <target name="plugin_export" />
                                 </ant>
                             </target>
                         </configuration>
